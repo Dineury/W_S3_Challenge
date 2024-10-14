@@ -284,18 +284,19 @@
   
       this.ants = this.ants.filter(ant => ant.health > 0);
         
-    
+   
       if(antLength > 0){
         return `${antLength} ants starting work!`
       } else { return "No ants here. Did you work them to death?"}
     }
     feed(name){
+      
      this.ants.forEach(ant => {
        if(ant.name === name){
         ant.health += 15
        } 
       });
-    return name === 'Blake' ? "Yum!" : `${name} not found!`
+    return name === this.ants[1].name ? "Yum!" : `${name} not found!`
      
     }
        
